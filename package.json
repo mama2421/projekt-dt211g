@@ -1,14 +1,23 @@
 {
-  "name": "projektet",
+  "name": "moment2",
   "version": "1.0.0",
-  "main": "index.js",
+  "source": [
+    "src/index.html"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "author": "",
   "license": "ISC",
   "description": "",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.13.3",
+    "parcel": "^2.13.3",
+    "sharp": "^0.33.5"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "dependencies": {
-    "parcel": "^2.13.3"
+    "svgo": "^3.3.2"
   }
 }

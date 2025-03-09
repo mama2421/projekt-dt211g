@@ -1,11 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Moment5(DT211G)</title>
+    <script type="module" src="./scripts/main.js" defer></script>
+    <link rel="stylesheet" href="./styles/style.scss">    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 </head>
 <body>
-    
+    <!--Navigation, banner as well as footer is the same for all 3 pages-->
+<div class="container">
+    <header>
+        <!-- Menu for tablet and phone-->
+        <button class="menu-btn open" id="open-menu">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text">Meny</span>
+        </button>
+        <!-- nav -->
+        <nav id="nav-menu">
+            <!-- when the mobile nav is visable-->
+            <button class="menu-btn close" id="close-menu">
+                <span class="menu-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text">Stäng</span>
+            </button>
+            <!--The options-->
+            <ul>
+                <li><a href="./index">STARTSIDA</a></li>
+                <li><a href="./sass">SASS</a></li>
+                <li><a href="./animering">ANIMERING</a></li>
+                <li><a href="./diagram">DIAGRAM</a></li>
+                <li><a href="./karta">KARTA</a></li>
+            </ul>
+        </nav>
+    </header>
+<main>
+    <section>
+        <h2>Sök en plats</h2>
+    <form id="searchForm">
+        <input type="text" id="locationInput" placeholder="Ange en plats" required>
+        <button type="submit">Sök</button>
+    </form>
+
+    <div id="map" style="width: 100%; height: 400px;"></div>
+</section>
+</main>    
+<footer class="footer">
+        <p>Laborationsuppgift för kursen DT211G</p>
+        <p>&#169; Copyright Manar Matroud, 2025</p>
+</footer>
+</div>
 </body>
 </html>
