@@ -1,0 +1,19 @@
+@import './variables'; // Import the variables
+$theme: 'light';
+.footer {
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  padding: 2rem;
+  font-size: 18px;
+
+  // Default (light theme)
+  background-color: $primary-color;
+  color: $secondary-color-light; 
+
+  // Media query for dark theme
+  @media (prefers-color-scheme: dark) {
+    background-color: lighten($primary-color-dark, 20%);
+    color: $secondary-color-dark;
+  }
+}

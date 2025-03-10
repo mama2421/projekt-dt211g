@@ -1,0 +1,20 @@
+// _layout.scss
+$theme: 'light';
+
+.container {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    height: auto;
+}
+
+main {
+    box-sizing: border-box;
+    margin-top: 2em;
+    padding: 15em 0;
+}
+
+map {
+    #map {
+        width: 400px;
+    }
+}

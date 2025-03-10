@@ -1,0 +1,26 @@
+@import './variables'; // Import the variables
+$theme: 'light';
+header {
+  top: 0;
+  width: 100vw;
+  text-align: left;
+  padding: 2rem;
+  font-size: 18px;
+
+  // Default (light theme)
+  background-color: $primary-color;
+  color: $secondary-color-light; 
+
+  // Media query for dark theme
+  @media (prefers-color-scheme: dark) {
+    background-color: lighten($primary-color-dark, 20%);
+    color: $secondary-color-dark;
+  }
+}
+picture{
+  img{
+    width: auto;
+    height: 80px;
+    border-radius: 50px;
+  }
+}

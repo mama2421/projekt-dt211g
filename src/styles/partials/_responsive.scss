@@ -1,0 +1,62 @@
+// _responsive.scss
+@media only screen and (min-width: 992px) {
+  main {
+      box-sizing: border-box;
+      width: 100vw;
+  }
+
+  header {
+      padding: 0 3em;
+  }
+
+  .menu-btn {
+      display: none;
+  }
+
+  #open-menu {
+      display: none !important;
+      right: 0;
+  }
+
+  header {
+      position: fixed;
+  }
+
+  nav {
+      display: block !important;
+      position: static;
+      height: auto;
+      font-size: 18px;
+      width: auto;
+
+      ul {
+          height: 100%;
+      }
+
+      li {
+          display: inline;
+      }
+  }
+}
+
+@media (max-width: 950px) {
+  body {
+      width: 100vw;
+  }
+
+  main {
+      margin: 0;
+      padding: 6em 0;
+  }
+
+  section {
+      box-sizing: border-box;
+      margin: 0;
+      padding: .5em;
+  }
+
+  h1 {
+      font-size: 1.5em;
+      width: 300px;
+  }
+}

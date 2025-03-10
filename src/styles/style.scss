@@ -1,0 +1,36 @@
+@import './partials/variables';
+@import './partials/mixins';
+@import './partials/header';
+@import './partials/footer';
+@import './partials/layout';
+@import './partials/responsive';
+@import "./partials/animering";
+@import "./partials/map";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: calc(100vh - 120px); // Höjd för content mellan header och footer
+}
+
