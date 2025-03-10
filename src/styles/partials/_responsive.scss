@@ -1,48 +1,61 @@
 // _responsive.scss
 @media only screen and (min-width: 992px) {
+  @import './variables'; // Importera variabler
+
+$transition-duration: 0.5s;
+$map-width: 60%; // Karta tar upp 70% av bredden
+$info-width: 40%; // Wikipedia info tar upp 30% av bredden
+
+.map-container {
+  width: $map-width;
+  height: 100%;
+}
+
+#wikiInfo {
+  width: $info-width;
+  height: 100%;
+  border-left: 2px solid #ddd;
+  padding: 25px;
+  box-sizing: border-box;
+  position: relative;
+  left: -100%; // Börjar utanför skärmen
+  opacity: 0;
+  transition: left $transition-duration ease, opacity $transition-duration ease;
+}
+
+.wiki-info {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+      left: -100%;
+      opacity: 0;
+  }
+  100% {
+      left: 0;
+      opacity: 1;
+  }
+}
+
   main {
       box-sizing: border-box;
       width: 100vw;
   }
-
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: calc(100vh - 120px); // Höjd för content mellan header och footer
+  }
   header {
       padding: 0 3em;
-  }
-
-  .menu-btn {
-      display: none;
-  }
-
-  #open-menu {
-      display: none !important;
-      right: 0;
-  }
-
-  header {
       position: fixed;
   }
 
-  nav {
-      display: block !important;
-      position: static;
-      height: auto;
-      font-size: 18px;
-      width: auto;
-
-      ul {
-          height: 100%;
-      }
-
-      li {
-          display: inline;
-      }
-  }
 }
 
 @media (max-width: 950px) {
-  body {
-      width: 100vw;
-  }
 
   main {
       margin: 0;
@@ -51,12 +64,19 @@
 
   section {
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
       margin: 0;
       padding: .5em;
   }
-
+  .map-container, #wikiInfo{
+    width: 100%;
+  }
   h1 {
       font-size: 1.5em;
       width: 300px;
+  }
+  footer{
+    padding: 2px 0;
   }
 }

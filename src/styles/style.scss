@@ -5,32 +5,27 @@
 @import './partials/layout';
 @import './partials/responsive';
 @import "./partials/animering";
-@import "./partials/map";
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: $secondary-color-light; 
+  
+    // Media query for dark theme
+    @media (prefers-color-scheme: dark) {
+      background-color: $primary-color-dark;
+      color: $secondary-color-dark;
+        a{
+            color: $accent-color-dark;
+        }
+    
+    }
+  }
 
 .container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-.content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: calc(100vh - 120px); // Höjd för content mellan header och footer
 }
 

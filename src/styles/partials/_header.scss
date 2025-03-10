@@ -16,6 +16,11 @@ header {
     background-color: lighten($primary-color-dark, 20%);
     color: $secondary-color-dark;
   }
+
+  section{
+    display: flex;
+    flex-direction: row;  
+  }
 }
 picture{
   img{

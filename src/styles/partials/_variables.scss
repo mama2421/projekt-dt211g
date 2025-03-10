@@ -17,7 +17,11 @@ $primary-color-dark: #2b2b2b;  // Mörk bakgrund
 $secondary-color-dark: #e0e0e0;  // Ljus text
 $accent-color-dark: #bb86fc;  // Ljus lila för länkar och knappar
 
-$h2:36px;
-$p:14px;
+h2{
+    font-size: 3em;
+}
+p{
+    font-size: 1.2em;
+}
 
 /* Övriga variabler */
