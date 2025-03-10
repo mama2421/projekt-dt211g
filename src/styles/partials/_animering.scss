@@ -1,0 +1,48 @@
+@import './variables';
+
+#searchForm button {
+  font-size: 1.2em; /* Make button text bigger */
+  padding: 12px 20px; /* Add more space inside */
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+
+  &:active {
+    background-color: #003d80;
+  }
+
+}
+
+#searchForm button:hover {
+  background-color: #0056b3;
+}
+
+.wanderer {
+  width: $figure-size;
+  height: $figure-size;
+  background: url('../images/bild.png') no-repeat center/cover; 
+  position: absolute;
+  top: 90px;  
+  animation: walk $animation-duration linear infinite alternate;
+}
+
+@keyframes walk {
+  0% {
+    left: 0;
+    transform: scaleX(1); // Vänd åt höger
+  }
+  50% {
+    transform: translateY(-10px); // Liten studs för att se ut som att den går
+  }
+  100% {
+    left: calc(100vw - #{$figure-size});
+    transform: scaleX(-1); // Vänd åt vänster
+  }
+}
