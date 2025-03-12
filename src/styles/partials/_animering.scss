@@ -24,25 +24,17 @@
   background-color: #0056b3;
 }
 
-.wanderer {
-  width: $figure-size;
-  height: $figure-size;
-  background: url('../images/bild.png') no-repeat center/cover; 
-  position: absolute;
-  top: 90px;  
-  animation: walk $animation-duration linear infinite alternate;
-}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; // Space between image and text
 
-@keyframes walk {
-  0% {
-    left: 0;
-    transform: scaleX(1); // Vänd åt höger
+  img {
+    width: 100px; // Adjust as needed
+    transition: transform 0.8s ease-in-out; // Smooth animation
   }
-  50% {
-    transform: translateY(-10px); // Liten studs för att se ut som att den går
-  }
-  100% {
-    left: calc(100vw - #{$figure-size});
-    transform: scaleX(-1); // Vänd åt vänster
+
+  img:hover {
+    transform: translateY(150px) rotate(20deg); // Makes it fall and tilt
   }
 }
