@@ -1,18 +1,14 @@
-@import './variables'; // Import the variables
-$theme: 'light';
 .footer {
-  bottom: 0;
-  width: 100vw;
+  width: 100%;
   text-align: center;
   font-size: 18px;
-
-  // Default (light theme)
+  padding: 1rem;
   background-color: $primary-color;
-  color: $secondary-color-light; 
+  color: $secondary-color-light;
+  margin-top: auto; 
 
-  // Media query for dark theme
   @media (prefers-color-scheme: dark) {
-    background-color: lighten($primary-color-dark, 20%);
-    color: $secondary-color-dark;
+      background-color: lighten($primary-color-dark, 20%);
+      color: $secondary-color-dark;
   }
 }

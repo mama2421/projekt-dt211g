@@ -2,14 +2,14 @@
 $theme: 'light';
 
 .container {
-    box-sizing: border-box;
-    overflow-x: hidden;
-    height: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
-    box-sizing: border-box;
-    padding: 15em 2px;
+  flex-grow: 1; 
+  padding-bottom: 2rem; 
 }
 
 map {
@@ -26,8 +26,8 @@ map {
 }
 
 #locationInput {
-  font-size: 1.2em; /* Make the text inside bigger */
-  padding: 12px; /* Add more space inside */
+  font-size: 1.2em; 
+  padding: 12px; 
   border: 2px solid #333;
   border-radius: 5px;
 }

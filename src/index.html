@@ -16,19 +16,23 @@
 <div class="container">
     <header>
         <section class="logo">
-            <picture>
-                <source srcset="/src/images/logo.kopia.png" type="image/png">
-                <img src="./images/logo.kopia.png" alt="Logga">
-            </picture>    
-            <h1>WikiKarta - Info om platser</h1>    
+            <a href="index.html" title="Till startsidan">
+                <picture>
+                    <source srcset="/src/images/logo.kopia.png" type="image/png">
+                    <img src="./images/logo.kopia.png" alt="Logga" loading="lazy">
+                </picture>  
+            </a>
+ 
+                <h1>WikiKarta - Info om platser</h1>    
         </section>
-    </header>
+            </header>
     <main>
         <section>
             <div class="wanderer"></div>
             <h2>Sök en plats</h2>
             <p>
-                Skriv in en plats för att få information om denna!
+                Skriv in en plats för att få information om denna! <br>
+                Du kan också klicka dig fram på kartan!
             </p>
             <form id="searchForm">
                 <input type="text" id="locationInput" placeholder="Ange en plats" required>

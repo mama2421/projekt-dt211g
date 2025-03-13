@@ -10,7 +10,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #fff;
-    color: $secondary-color-light; 
   
     // Media query for dark theme
     @media (prefers-color-scheme: dark) {
@@ -29,3 +28,13 @@ body {
     min-height: 100vh;
 }
 
+.wiki-info {
+  animation: slideIn 0.5s forwards;
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow-wrap: break-word; 
+}
+
+main{
+  padding-left: 1em;
+}

@@ -93,13 +93,13 @@ map.on("click", async function (e) {
 });
 
 /**
- * Hämtar information om en plats från Wikipedia.
+ * Hämtar information och bild om en plats från Wikipedia.
  * @param {string} place - Platsens namn
  * @returns {Promise<void>}
  */
 async function fetchWikipediaInfo(place) {
     let cleanPlace = place.split(",")[0].trim();
-    const wikiUrl = `https://sv.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=extracts&exintro=true&titles=${cleanPlace}`;
+    const wikiUrl = `https://sv.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=extracts|pageimages&exintro=true&pithumbsize=300&titles=${cleanPlace}`;
 
     try {
         /** @type {Response} */
@@ -124,11 +124,14 @@ async function fetchWikipediaInfo(place) {
             return;
         }
 
-        const extract = pages[pageId].extract;
+        const page = pages[pageId];
+        const extract = page.extract || "Ingen ytterligare information tillgänglig.";
         const wikiLink = `https://sv.wikipedia.org/wiki/${cleanPlace.replace(" ", "_")}`;
+        const imageUrl = page.thumbnail ? page.thumbnail.source : null;
 
         wikiDiv.innerHTML = `
             <h3>${cleanPlace}</h3>
+            ${imageUrl ? `<img src="${imageUrl}" alt="Bild på ${cleanPlace}" style="max-width: 100%; height: auto;">` : ""}
             ${extract}
             <p><a href="${wikiLink}" target="_blank">Läs mer på Wikipedia</a></p>
         `;

@@ -1,59 +1,89 @@
 // _responsive.scss
-@media only screen and (min-width: 992px) {
-  @import './variables'; // Importera variabler
-
-$transition-duration: 0.5s;
-$map-width: 60%; // Karta tar upp 70% av bredden
-$info-width: 40%; // Wikipedia info tar upp 30% av bredden
-
-.map-container {
-  width: $map-width;
-  height: 100%;
-}
-
-#wikiInfo {
-  width: $info-width;
-  height: 100%;
-  background-color: $primary-color-light;
-  border-left: 2px solid #ddd;
-  padding: 25px;
-  box-sizing: border-box;
-  position: relative;
-  left: -100%; // Börjar utanför skärmen
-  opacity: 0;
-  transition: left $transition-duration ease, opacity $transition-duration ease;
-}
-
-.wiki-info {
-  animation: slideIn 0.5s forwards;
-}
-
-@keyframes slideIn {
-  0% {
-      left: -100%;
-      opacity: 0;
+@media only screen and (min-width: 3000px) {
+  #wikiInfo {
+    display: grid;
+    grid-template-columns: 30% 1fr; /* Bilden tar 30% av bredden, resten för texten */
+    grid-gap: 20px; /* Lägger till mellanrum mellan bilden och texten */
+    padding: 20px;
   }
-  100% {
-      left: 0;
-      opacity: 1;
+
+  #wikiInfo h3 {
+    grid-column: 2 / 3; /* Rubriken ligger i andra kolumnen */
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  #wikiInfo img {
+    grid-column: 1 / 2; /* Bilden ligger i första kolumnen */
+    width: 100%; /* Bilden fyller sin kolumn */
+    height: auto;
+  }
+
+  #wikiInfo div {
+    grid-column: 2 / 3; /* All annan text (inklusive länken) ligger i andra kolumnen */
+  }
+
+  #wikiInfo p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+  }
+
+  #wikiInfo p a {
+    color: #007BFF;
+    text-decoration: none;
   }
 }
+
+@media only screen and (min-width: 1050px) {
+  @import './variables'; 
+
+  $transition-duration: 0.5s;
+  $map-width: 60%; // Karta tar upp 60% av bredden
+  $info-width: 40%; // Wikipedia info tar upp 40% av bredden
+
+  .map-container {
+    width: $map-width;
+    height: 100%;
+  }
+
+  #wikiInfo {
+    width: $info-width;
+    border-left: 2px solid #ddd;
+    padding: 25px;
+    box-sizing: border-box;
+    position: relative;
+    height: fit-content;  
+    opacity: 0;
+    left: -100%;
+    transition: left $transition-duration ease, opacity $transition-duration ease;
+  }
+
+
+  @keyframes slideIn {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+  }
 
   main {
       box-sizing: border-box;
       width: 100vw;
+      height: auto;
   }
   .content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: calc(100vh - 120px); // Höjd för content mellan header och footer
   }
   header {
       padding: 0 3em;
-      position: fixed;
   }
-
 }
 
 @media (max-width: 950px) {
@@ -62,6 +92,11 @@ $info-width: 40%; // Wikipedia info tar upp 30% av bredden
       margin: 0;
       padding: 6em 0;
   }
+  header {
+    h1{
+      font-size: 2em;
+    }
+}
 
   section {
       box-sizing: border-box;
