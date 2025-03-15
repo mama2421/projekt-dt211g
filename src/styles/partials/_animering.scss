@@ -38,3 +38,29 @@
     transform: translateY(150px) rotate(20deg); // Makes it fall and tilt
   }
 }
+
+/* För wiki-info sektionen */
+.wiki-info {
+  max-width: 800px;
+  margin: auto 2rem;
+  overflow-wrap: break-word;
+  opacity: 0;
+  position: relative;
+}
+
+/* Animation när ny information ska visas */
+.wiki-info.slide-in {
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+/* Animation för att komma in från höger */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%); /* Starta från utanför skärmen till höger */
+    opacity: 0; /* Osynlig vid start */
+  }
+  100% {
+    transform: translateX(0); /* Sluta i sin normala position */
+    opacity: 1; /* Gör den synlig */
+  }
+}

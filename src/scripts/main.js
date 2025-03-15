@@ -94,7 +94,7 @@ map.on("click", async function (e) {
 
 /**
  * Hämtar information och bild om en plats från Wikipedia.
- * @param {string} place - Platsens namn
+ * @param {string} place 
  * @returns {Promise<void>}
  */
 async function fetchWikipediaInfo(place) {
@@ -121,6 +121,7 @@ async function fetchWikipediaInfo(place) {
 
         if (pageId === "-1") {
             wikiDiv.innerHTML = `<p>Ingen Wikipedia-info hittades för <strong>${cleanPlace}</strong>.</p>`;
+            triggerSlideIn(wikiDiv); 
             return;
         }
 
@@ -135,7 +136,23 @@ async function fetchWikipediaInfo(place) {
             ${extract}
             <p><a href="${wikiLink}" target="_blank">Läs mer på Wikipedia</a></p>
         `;
+        triggerSlideIn(wikiDiv);
     } catch (error) {
         console.error("Fel vid hämtning av Wikipedia-data:", error);
     }
+}
+
+/**
+ * Lägg till slide-in animationen
+ * @param {HTMLElement} element 
+ */
+function triggerSlideIn(element) {
+
+    element.classList.remove("slide-in");
+    
+   
+    void element.offsetWidth;
+    
+   
+    element.classList.add("slide-in");
 }

@@ -38,51 +38,22 @@
 @media only screen and (min-width: 1050px) {
   @import './variables'; 
 
-  $transition-duration: 0.5s;
-  $map-width: 60%; // Karta tar upp 60% av bredden
-  $info-width: 40%; // Wikipedia info tar upp 40% av bredden
+  $map-width: 59%; // Karta tar upp 60% av bredden
+  $info-width: 39%; // Wikipedia info tar upp 40% av bredden
 
   .map-container {
     width: $map-width;
     height: 100%;
   }
 
-  #wikiInfo {
-    width: $info-width;
-    border-left: 2px solid #ddd;
-    padding: 25px;
-    box-sizing: border-box;
-    position: relative;
-    height: fit-content;  
-    opacity: 0;
-    left: -100%;
-    transition: left $transition-duration ease, opacity $transition-duration ease;
-  }
-
-
-  @keyframes slideIn {
-    0% {
-        left: -100%;
-        opacity: 0;
-    }
-    100% {
-        left: 0;
-        opacity: 1;
-    }
-  }
-
   main {
       box-sizing: border-box;
-      width: 100vw;
       height: auto;
   }
   .content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-  header {
-      padding: 0 3em;
   }
 }
 
