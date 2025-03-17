@@ -2,25 +2,25 @@
 @media only screen and (min-width: 3000px) {
   #wikiInfo {
     display: grid;
-    grid-template-columns: 30% 1fr; /* Bilden tar 30% av bredden, resten för texten */
-    grid-gap: 20px; /* Lägger till mellanrum mellan bilden och texten */
+    grid-template-columns: 30% 1fr; 
+    grid-gap: 20px; 
     padding: 20px;
   }
 
   #wikiInfo h3 {
-    grid-column: 2 / 3; /* Rubriken ligger i andra kolumnen */
+    grid-column: 2 / 3;
     font-size: 2em;
     margin-bottom: 10px;
   }
 
   #wikiInfo img {
-    grid-column: 1 / 2; /* Bilden ligger i första kolumnen */
-    width: 100%; /* Bilden fyller sin kolumn */
+    grid-column: 1 / 2;
+    width: 100%; 
     height: auto;
   }
 
   #wikiInfo div {
-    grid-column: 2 / 3; /* All annan text (inklusive länken) ligger i andra kolumnen */
+    grid-column: 2 / 3; 
   }
 
   #wikiInfo p {

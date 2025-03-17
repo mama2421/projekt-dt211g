@@ -1,9 +1,9 @@
 @import './variables';
 
 #searchForm button {
-  font-size: 1.2em; /* Make button text bigger */
-  padding: 12px 20px; /* Add more space inside */
-  background-color: #007bff;
+  font-size: 1.2em; 
+  padding: 12px 20px; 
+  background-color: #0064cf;
   color: white;
   border-radius: 5px;
   border: none;
@@ -21,7 +21,7 @@
 }
 
 #searchForm button:hover {
-  background-color: #0056b3;
+  background-color: #003e80;
 }
 
 .logo {
