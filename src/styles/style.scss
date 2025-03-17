@@ -6,10 +6,13 @@
 @import './partials/responsive';
 @import "./partials/animering";
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
     margin: 0;
     padding: 0;
     background-color: #fff;
+    font-family: Roboto;
   
     // Media query for dark theme
     @media (prefers-color-scheme: dark) {
@@ -27,7 +30,11 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
+.content{
+  h1{
+    display: none;
+  }
+}
 main{
   padding-left: 1em;
 }
